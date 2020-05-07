@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Leo Wang</title>
+    <title>Jason Kwan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -11,7 +11,7 @@
     }
 
     body {
-      background-image: url('oogway_background.jpg');
+      background-image: url('CrimsonChin.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
