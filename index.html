@@ -111,26 +111,9 @@
       <h3>Major Interest: Neuroscience</h3>
     </div>
 
-    <audio id="backgroundMusic" controls autoplay hidden>
+    <audio controls autoplay hidden loop>
         <source src="comfy vibes.mp3" type="audio/mp3">
     </audio>
-    
-    <script>
-        var x = document.getElementById("backgroundMusic");
-
-        function enableLoop() { 
-          x.loop = true;
-          x.load();
-        } 
-
-        function disableLoop() { 
-          x.loop = false;
-          x.load();
-        } 
-        
-        window.onload = function enableLoop();
-        window.onload = consol.log("looping music");
-    </script>
     
     <div class="row">
       <div class="side">
