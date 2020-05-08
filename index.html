@@ -76,6 +76,20 @@
       background: rgba(255, 255, 255, 0.5);
       padding: 20px;
     }
+        
+    /* Bullet points */
+    li {
+        list-style: none;
+    }
+    li:before {
+        content: '';
+        display: inline-block;
+        height: 1em;
+        width: 1em;
+        background-size: contain;
+        background-image: url('BulletPoint.png');
+        background-repeat: no-repeat;
+    }
 
     /* Footer */
     .footer {
@@ -138,7 +152,7 @@
     </div>
 
     <div class="footer">
-      <h2>Footer</h2>
+      <h2>Contact me at kwan.jason2001@gmail.com for any inquiries or opportunities.</h2>
         <video width="320" height="240" controls poster="FairlyOddParentsMath.jpg">
           <source src="CoronaRace.mp4" type="video/mp4">
           Your browser does not support the video tag.
