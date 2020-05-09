@@ -54,9 +54,9 @@
       -webkit-transform: scale(1.2); 
       background-color: #ddd;
       color: black;
-      opacity: 0.1;
+      animation: smooth;
     }
-
+    
     /* Column container */
     .row {
       display: flex;
@@ -113,6 +113,12 @@
         width:100%;
       }
     }
+        
+    @-webkit-keyframes keyframes smooth {
+            0% { opacity: 1;}
+            100% { opacity: 0.5;}
+        }
+        
     </style>
 </head>
     
