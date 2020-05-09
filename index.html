@@ -56,7 +56,12 @@
       color: black;
       animation: smooth 1s ease-in;
     }
-    
+            
+    @-webkit-keyframes keyframes smooth {
+            0% { opacity: 1;}
+            100% { opacity: 0.5;}
+    }
+        
     /* Column container */
     .row {
       display: flex;
@@ -112,13 +117,7 @@
         float: none;
         width:100%;
       }
-    }
-        
-    @-webkit-keyframes keyframes smooth {
-            0% { opacity: 1;}
-            100% { opacity: 0.5;}
-        }
-        
+    }        
     </style>
 </head>
     
