@@ -6,209 +6,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
 
-    * {
-      box-sizing: border-box;
-    }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      background-image: url('MedicineBackground3.jpg');
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      background-size: cover;
-      font-family: "Times New Roman", Times, serif;
-      margin: 0;
-    }
-        
-    #borderimg { 
-      border: 10px solid;
-      padding: 1px;
-      border-image: url(ImageBorder.jpg) 500 stretch;
-    }
+        body {
+            background-image: url('MedicineBackground3.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: "Times New Roman", Times, serif;
+            margin: 0;
+        }
 
-    /* width */
-    ::-webkit-scrollbar {
-        width: 30px;
-        background: #0f0e16;
-    }
+        #borderimg {
+            border: 10px solid;
+            padding: 1px;
+            border-image: url(ImageBorder.jpg) 50 round;
+        }
 
-    /* Track */
-    ::-webkit-scrollbar-track {
-        border-radius: 30px;
-    }
+        img {
+            border-radius: 32px;
+        }
 
-    /* Handle */
-    ::-webkit-scrollbar-thumb {
-      background:linear-gradient(
-        45deg,
-        #06dee1,
-        #79ff6c
-        );
-      border-radius: 30px;
-    }
-        
-    /* Style the header */
-    .header {
-      padding-top: 250px;
-      padding-bottom: 250px;
-      text-align: center;
-      color: white;
-    }
+        /* width */
+        ::-webkit-scrollbar {
+            width: 30px;
+            background: #0f0e16;
+        }
 
-    /* Increase the font size of the h1 element */
-    .header h1 {
-      font-size: 50px;
-    }
+        /* Track */
+        ::-webkit-scrollbar-track {
+            border-radius: 30px;
+        }
 
-    /* Style the top navigation bar */
-    .navbar {
-      position: relative;
-      overflow: hidden;
-      background-color: #0f0e16;
-    }
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient( 45deg, #06dee1, #79ff6c );
+            border-radius: 30px;
+        }
 
-    /* Style the navigation bar links */
-    .navbar a {
-      float: left;
-      display: block;
-      color: black;
-      text-align: center;
-      padding-left: 15px;
-      padding-right: 15px;
-      padding-top: 15px;
-      padding-bottom: 10px;
-      text-decoration: none;
-    }
+        .scrollbar {
+            float: left;
+            height: 800px;
+            width: 710px;
+            overflow-y: scroll;
+            margin-bottom: 25px;
+        }
 
-    /* Change color on hover */
-    .navbar a:hover {
-      -webkit-transform: scale(1.15); 
-      background-color: #ddd;
-    }
-        
-    /* Column container */
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    
-    /* Create 3 equal columns that sit next to each other as background for the pictures */
-    .picback {
-      float: left;
-      flex: 33.33%;
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.8);
-    }
-        
-    /* Create two unequal columns that sits next to each other */
-    /* Sidebar/left column */
-    .side {
-      flex: 40%;
-      background: rgba(204, 204, 204, 0.5);
-      padding: 20px;
-    }
+        /* Style the header */
+        .header {
+            padding-top: 250px;
+            padding-bottom: 250px;
+            text-align: center;
+            color: white;
+            animation: fadeInAnimation 2.0s ease forwards;
+        }
 
-    /* Main column */
-    .main {
-      flex: 60%;
-      background: rgba(255, 255, 255, 0.5);
-      padding: 20px;
-    }
-        
-    /* Bullet points */
-    li {
-        list-style: none;
-    }
-    li:before {
-        content: '';
-        display: inline-block;
-        height: 1em;
-        width: 1em;
-        background-size: contain;
-        background-image: url('BulletPoint.png');
-        background-repeat: no-repeat;
-    }
+        /* Increase the font size of the h1 element */
+        .header h1 {
+            font-size: 50px;
+        }
 
-    /* Footer */
-    .footer {
-      padding: 20px;
-      text-align: center;
-      background: #ddd;
-    }
+        /* Style the top navigation bar */
+        .navbar {
+            position: relative;
+            overflow: hidden;
+            background-color: #0f0e16;
+        }
 
-    /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 700px) {
-      .row {
-        flex-direction: column;
-      }
-    }
+        /* Style the navigation bar links */
+        .navbar a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 15px;
+            padding-bottom: 10px;
+            text-decoration: none;
+        }
 
-    /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-    @media screen and (max-width: 400px) {
-      .navbar a {
-        float: none;
-        width:100%;
-      }
-    }        
+        /* Change color on hover */
+        .navbar a:hover {
+            -webkit-transform: scale(1.15);
+        }
+
+        /* Column container */
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* Create 3 equal columns that sit next to each other as background for the pictures */
+        .picback {
+            float: left;
+            flex: 33.33%;
+            padding: 30px;
+            background: rgba(15, 14, 22, 0.5);
+        }
+
+        /* Create two unequal columns that sits next to each other */
+        /* Sidebar/left column */
+        .side {
+            flex: 40%;
+            background: rgba(204, 204, 204, 0.5);
+            padding: 20px;
+        }
+
+        /* Main column */
+        .main {
+            flex: 60%;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+        }
+
+        /* Bullet points */
+        li {
+            list-style: none;
+        }
+
+        li:before {
+            content: '';
+            display: inline-block;
+            height: 1em;
+            width: 1em;
+            background-size: contain;
+            background-image: url('BulletPoint.png');
+            background-repeat: no-repeat;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: #ddd;
+        }
+
+        @keyframes fadeInAnimation { 
+            0% { 
+                opacity: 0; 
+            } 
+            100% { 
+                opacity: 1; 
+            } 
+        }
+
+        /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 700px) {
+            .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+        @media screen and (max-width: 400px) {
+            .navbar a {
+                float: none;
+                width: 100%;
+            }
+        }
     </style>
 </head>
-    
+
 <body>
     <div class="navbar">
-      <a href="https://github.com/kore4n">
-          <img alt="GitHub" src="GitHubLogo.png" width="75" height="75" id="borderimg">
-      </a>
-      <a href="https://www.instagram.com/jasonkw4n/">
-          <img alt="Instagram" src="IGLogo.png" width="75" height="75" id="borderimg">
-      </a>
+        <a href="https://github.com/kore4n">
+            <img alt="GitHub" src="GitHubLogo.png" width="75" height="75" id="borderimg">
+        </a>
+        <a href="https://www.instagram.com/jasonkw4n/">
+            <img alt="Instagram" src="IGLogo.png" width="75" height="75" id="borderimg">
+        </a>
     </div>
 
     <div class="header">
-      <h1>Jason Kwan</h1>
-      <h2>Hi, I'm a Medical Science Student at UWO!</h2>
+        <h1>Jason Kwan</h1>
+        <h2>Hi, I'm a Medical Science Student at UWO!</h2>
     </div>
 
     <audio controls autoplay hidden loop>
         <source src="ComfyVibes.mp3" type="audio/mp3">
     </audio>
-    
+
     <div class="row">
-      <div class="side">
-        <h1 style="text-align:center;">Resume</h1>
-        <div class="container">
-          <embed src="ResumeV2.pdf" width="100%" height="800px" />
+        <div class="side">
+            <h1 style="text-align:center;">Resume</h1>
+            <embed src="ResumeV2.pdf" width="100%" height="800px"/>
         </div>
-      </div>
-      <div class="main">
-        <h1 style="text-align:center;">About Me</h1>
-        <h2>
-              <ul>
-                <li>I'm a Medical Science student at the University of Western Ontario with a major interest in Neuroscience.</li> <br>
-                <li>I've developed skills working as a veterinarian assistant at Weldrick Animal Hospital, helping mostly with invasive surgeries including spays, neuters, and tooth extractions, and more rarely foreign object and tumour removals.</li> <br>
-                <li>My interests include programming in C#, listening to piano, and playing video games.</li> <br>
-              </ul>
-        </h2>
-      </div>
+        <div class="main">
+            <h1 style="text-align:center;">About Me</h1>
+            <h2>
+                <ul>
+                    <li>I'm a Medical Science student at the University of Western Ontario with a major interest in Neuroscience.</li>
+                    <br>
+                    <li>I've developed skills working as a veterinarian assistant at Weldrick Animal Hospital, helping mostly with invasive surgeries including spays, neuters, and tooth extractions, and more rarely foreign object and tumour removals.</li>
+                    <br>
+                    <li>My interests include programming in C#, listening to piano, and playing video games.</li>
+                    <br>
+                </ul>
+            </h2>
+        </div>
     </div>
-    
+
     <div class="row">
         <div class="picture">
             <div class="picback">
-                <img src="JHospital.JPG" alt="Hospital" width="560" >
+                <img src="JHospital.JPG" alt="Hospital" width="570" id="borderimg">
             </div>
             <div class="picback">
-                <img src="JLab.png" alt="Lab" width="560">
+                <img src="JLab.png" alt="Lab" width="570" id="borderimg">
             </div>
             <div class="picback">
-                <img src="JSurgery.png" alt="Surgery" width="560">
+                <img src="JSurgery.png" alt="Surgery" width="570" id="borderimg">
             </div>
         </div>
     </div>
-    
+
     <div class="footer">
-      <h2>Contact me at kwan.jason2001@gmail.com for any inquiries or opportunities.</h2>
+        <h2>Contact me at kwan.jason2001@gmail.com for any inquiries or opportunities.</h2>
         <video width="320" height="240" controls poster="FairlyOddParentsMath.jpg">
-          <source src="CoronaRace.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+            <source src="CoronaRace.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
 
