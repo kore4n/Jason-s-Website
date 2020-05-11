@@ -4,7 +4,10 @@
     <title>Jason Kwan</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <style>
+
+        /* Read this if nerd*/
 
         * {
             box-sizing: border-box;
@@ -19,15 +22,14 @@
             margin: 0;
         }
 
-        #borderimg {
-            border: 10px solid;
-            padding: 1px;
-            border-image: url(ImageBorder.jpg) 50 round;
-        }
-
+        /* Images */
         img {
-            border-radius: 32px;
+            border: 5px solid #0f0e16
         }
+            /* When hovering over images */
+            img:hover {
+                -webkit-transform: scale(1.20);
+            }
 
         /* width */
         ::-webkit-scrollbar {
@@ -44,6 +46,37 @@
         ::-webkit-scrollbar-thumb {
             background: linear-gradient( 45deg, #06dee1, #79ff6c );
             border-radius: 30px;
+        }
+
+        /* Uncomment to turn on border all the time */
+        div.gallery {
+            /*border: 1px solid #ccc;*/
+            
+        }
+
+        /* Uncomment to turn on border whe hovering */
+        div.gallery:hover {
+             /*border: 1px solid #777;*/
+        }
+
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+
+        div.desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 0 6px;
+            float: left;
+            width: 33.33333%;
         }
 
         .scrollbar {
@@ -63,35 +96,40 @@
             animation: fadeInAnimation 2.0s ease forwards;
         }
 
-        /* Increase the font size of the h1 element */
-        .header h1 {
-            font-size: 50px;
-        }
+            /* Increase the font size of the h1 element */
+            .header h1 {
+                font-size: 70px;
+            }
 
         /* Style the top navigation bar */
         .navbar {
-            position: relative;
             overflow: hidden;
             background-color: #0f0e16;
+            color: white;
         }
+            /* Custom settings for the first heading of the nav bar (the name) */
+            .navbar h1 {
+                position: relative;
+                top: 20px;
+                left: 200px;
+                margin-right: 15px;
+                margin-top: 10px;
+                margin-bottom: 0px;
+                color: white;
+            }
 
-        /* Style the navigation bar links */
-        .navbar a {
-            float: left;
-            display: block;
-            color: black;
-            text-align: center;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-top: 15px;
-            padding-bottom: 10px;
-            text-decoration: none;
-        }
-
-        /* Change color on hover */
-        .navbar a:hover {
-            -webkit-transform: scale(1.15);
-        }
+            /* Style the navigation bar links */
+            .navbar a {
+                float: left;
+                display: block;
+                color: black;
+                text-align: center;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                text-decoration: none;
+            }
 
         /* Column container */
         .row {
@@ -104,13 +142,15 @@
             float: left;
             flex: 33.33%;
             padding: 30px;
-            background: rgba(15, 14, 22, 0.5);
+            background: linear-gradient( 45deg, #141821, #932985 );
+            /*background: rgba(255, 255, 255, 0.4);*/
         }
 
         /* Create two unequal columns that sits next to each other */
         /* Sidebar/left column */
         .side {
             flex: 40%;
+            /*background: linear-gradient( 45deg, #161922, #B33332 );*/
             background: rgba(204, 204, 204, 0.5);
             padding: 20px;
         }
@@ -119,38 +159,37 @@
         .main {
             flex: 60%;
             background: rgba(255, 255, 255, 0.5);
+            /*background: linear-gradient( 45deg, #01580D, #00F521 );*/
             padding: 20px;
         }
 
         /* Bullet points */
-        li {
-            list-style: none;
-        }
-
-        li:before {
-            content: '';
-            display: inline-block;
-            height: 1em;
-            width: 1em;
-            background-size: contain;
-            background-image: url('BulletPoint.png');
-            background-repeat: no-repeat;
+        ul {
+            list-style-position: outside;
+            list-style-type: circle;
         }
 
         /* Footer */
         .footer {
-            padding: 20px;
-            text-align: center;
-            background: #ddd;
+            padding-top: 580px;
+            padding-bottom: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            text-align: left;
+            background: #0f0e16;
+            color: white;
+            font-size: 12px;
         }
 
-        @keyframes fadeInAnimation { 
-            0% { 
-                opacity: 0; 
-            } 
-            100% { 
-                opacity: 1; 
-            } 
+        /* Fade in animation for the title screen*/
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
 
         /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -167,22 +206,44 @@
                 width: 100%;
             }
         }
+
+        /* Responsive layout - when the screen is less than 700px wide, make some gallery pictures stack on top of each other in rows instead of next to each other */
+        @media only screen and (max-width: 700px) {
+            .responsive {
+              width: 49.99999%;
+              margin: 6px 0;
+            }
+        }
+
+        /* Responsive layout - when the screen is less than 500px wide, make every gallery picture stack on top of each other instead of next to each other */
+        @media only screen and (max-width: 500px) {
+            .responsive {
+                width: 100%;
+            }
+        }
+
+        .clearfix:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+            
     </style>
 </head>
 
 <body>
     <div class="navbar">
         <a href="https://github.com/kore4n">
-            <img alt="GitHub" src="GitHubLogo.png" width="75" height="75" id="borderimg">
+            <img alt="GitHub" src="GitHubLogo.png" width="60" height="60">
         </a>
         <a href="https://www.instagram.com/jasonkw4n/">
-            <img alt="Instagram" src="IGLogo.png" width="75" height="75" id="borderimg">
+            <img alt="Instagram" src="IGLogo.png" width="60" height="60">
         </a>
+        <h1> Jason Kwan </h1>
     </div>
 
     <div class="header">
-        <h1>Jason Kwan</h1>
-        <h2>Hi, I'm a Medical Science Student at UWO!</h2>
+        <h1>I'm Jason. Nice to Meet you!</h1>
     </div>
 
     <audio controls autoplay hidden loop>
@@ -192,7 +253,7 @@
     <div class="row">
         <div class="side">
             <h1 style="text-align:center;">Resume</h1>
-            <embed src="ResumeV2.pdf" width="100%" height="800px"/>
+            <embed src="ResumeV2.pdf" width="100%" height="800px" />
         </div>
         <div class="main">
             <h1 style="text-align:center;">About Me</h1>
@@ -209,26 +270,39 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="picture">
-            <div class="picback">
-                <img src="JHospital.JPG" alt="Hospital" width="570" id="borderimg">
+    <div class="picback">
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="JHospital.JPG">
+                    <img src="JHospital.JPG" alt="Hospital" width="570">
+                </a>
+                <div class="desc">Preparing for surgery</div>
             </div>
-            <div class="picback">
-                <img src="JLab.png" alt="Lab" width="570" id="borderimg">
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="JLab.png">
+                    <img src="JLab.png" alt="Lab" width="570">
+                </a>
+                <div class="desc">Conducting heartworm tests in the lab</div>
             </div>
-            <div class="picback">
-                <img src="JSurgery.png" alt="Surgery" width="570" id="borderimg">
+        </div>
+
+        <div class="responsive">
+            <div class="gallery">
+                <a target="_blank" href="JSurgery.png">
+                    <img src="JSurgery.png" alt="Surgery" width="570">
+                </a>
+                <div class="desc">
+                    Me and my supervisor Eugene in front of our workplace
+                </div>
             </div>
         </div>
     </div>
 
     <div class="footer">
         <h2>Contact me at kwan.jason2001@gmail.com for any inquiries or opportunities.</h2>
-        <video width="320" height="240" controls poster="FairlyOddParentsMath.jpg">
-            <source src="CoronaRace.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
     </div>
 
 </body>
