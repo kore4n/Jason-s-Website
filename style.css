@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('images/MedicineBackground3.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0;
+}
+
+.desc {
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Images */
+img {
+    border: 5px solid #0f0e16
+}
+
+/* Style navigation bar icons when hovering */
+.navbar img:hover {
+    -webkit-transform: scale(1.20);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 30px;
+    background: #0f0e16;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 30px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient( 45deg, #06dee1, #79ff6c );
+    border-radius: 30px;
+}
+
+/* Project showcase */
+.showcase-grid {
+    background: linear-gradient( 45deg, #141821, #932985 );
+    color: white;
+    display: grid;
+    padding: 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3em;
+    grid-auto-rows: minmax(300px, auto);
+}
+
+    .showcase-grid > div {
+        padding: 1em;
+        text-align: center;
+        color: black;
+    }
+
+* {
+    box-sizing: border-box;
+}
+
+/* Style the header */
+.header {
+    padding-top: 250px;
+    padding-bottom: 250px;
+    text-align: center;
+    color: white;
+    animation: fadeInAnimation 5.0s ease forwards;
+}
+
+    /* Increase the font size of the h1 element */
+    .header h1 {
+        font-size: 70px;
+    }
+
+/* Style the top navigation bar */
+.navbar {
+    overflow: hidden;
+    background-color: #0f0e16;
+    color: white;
+}
+
+    /* Custom settings for the first heading of the nav bar (the name) */
+    .navbar h1 {
+        position: relative;
+        top: 20px;
+        left: 200px;
+        margin-right: 15px;
+        margin-top: 10px;
+        margin-bottom: 0px;
+        color: white;
+    }
+
+    /* Style the navigation bar links */
+    .navbar a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        text-decoration: none;
+    }
+
+/* Column container */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 40%;
+    background: linear-gradient( 45deg, #141821, #932985 );
+    /*background: rgba(204, 204, 204, 0.5);*/
+    padding: 20px;
+}
+
+    .side h1 {
+        color: white;
+    }
+
+/* Style the scrollbar */
+.scrollbar {
+    float: left;
+    height: 800px;
+    width: 710px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+}
+
+/* Category splitter */
+.splitter {
+    background: #0f0e16;
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+    /* Style the splitter's first header */
+    .splitter h1 {
+        font-size: 60px;
+    }
+
+    /* Style the splitter's second header */
+    .splitter h2 {
+        font-size: 30px;
+    }
+
+/* Main column */
+.main {
+    flex: 60%;
+    /*background: rgba(255, 255, 255, 0.5);*/
+    background: linear-gradient( 45deg, #141821, #932985 );
+    padding: 20px;
+    color: white;
+}
+
+/* Bullet points */
+ul {
+    list-style-position: outside;
+    list-style-type: circle;
+}
+
+/* Footer */
+.footer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 30px;
+    text-align: left;
+    background: #0f0e16;
+    color: white;
+    font-size: 12px;
+}
+
+/* Fade in animation for the title screen*/
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+    .row {
+        flex-direction: column;
+    }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make some gallery pictures stack on top of each other in rows instead of next to each other */
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+/* Responsive layout - when the screen is less than 500px wide, make every gallery picture stack on top of each other instead of next to each other */
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
